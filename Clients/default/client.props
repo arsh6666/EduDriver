@@ -1,0 +1,6 @@
+<Project>
+  <PropertyGroup>
+    <ClientAppIconColor>#1A73E8</ClientAppIconColor>
+    <ClientSplashColor>#1A73E8</ClientSplashColor>
+  </PropertyGroup>
+</Project>

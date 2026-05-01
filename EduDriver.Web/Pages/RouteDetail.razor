@@ -1,0 +1,57 @@
+@page "/route"
+@inherits RootflyComponentBase<RouteDetailViewModel>
+
+<PageTitle>Route</PageTitle>
+
+<MudToolBar>
+    <MudIconButton Icon="@Icons.Material.Filled.ArrowBack" OnClick="() => Navigation.GoBackAsync()" />
+    <MudText Typo="Typo.h5">Route Details</MudText>
+</MudToolBar>
+
+@if (ViewModel.IsBusy)
+{
+    <MudProgressLinear Color="Color.Primary" Indeterminate="true" />
+}
+else if (ViewModel.Route is not null)
+{
+    <MudPaper Class="pa-4 mb-4" Elevation="2">
+        <MudText Typo="Typo.h6">@ViewModel.Route.Name</MudText>
+        <MudText Typo="Typo.body2" Color="Color.Secondary">@ViewModel.Route.Description</MudText>
+        <MudText Typo="Typo.body2">Total Students: @ViewModel.TotalStudents</MudText>
+    </MudPaper>
+
+    @if (ViewModel.Stops.Count > 0)
+    {
+        <MudText Typo="Typo.h6" Class="mb-2">Stops</MudText>
+        <MudTimeline TimelinePosition="TimelinePosition.Start">
+            @foreach (var stop in ViewModel.Stops)
+            {
+                <MudTimelineItem Color="Color.Primary" Size="Size.Small">
+                    <MudText Typo="Typo.subtitle1">@stop.Name</MudText>
+                    <MudText Typo="Typo.caption">@stop.Address</MudText>
+                    @if (stop.PickupTime.HasValue)
+                    {
+                        <MudText Typo="Typo.caption">Pickup: @stop.PickupTime.Value.ToString(@"hh\:mm")</MudText>
+                    }
+                </MudTimelineItem>
+            }
+        </MudTimeline>
+    }
+
+    @if (ViewModel.Students.Count > 0)
+    {
+        <MudText Typo="Typo.h6" Class="mt-4 mb-2">Students</MudText>
+        <MudTable Items="ViewModel.Students" Hover="true" Elevation="2">
+            <HeaderContent>
+                <MudTh>Name</MudTh>
+                <MudTh>Pickup Stop</MudTh>
+                <MudTh>Dropoff Stop</MudTh>
+            </HeaderContent>
+            <RowTemplate>
+                <MudTd>@context.StudentName</MudTd>
+                <MudTd>@context.PickupStopName</MudTd>
+                <MudTd>@context.DropoffStopName</MudTd>
+            </RowTemplate>
+        </MudTable>
+    }
+}

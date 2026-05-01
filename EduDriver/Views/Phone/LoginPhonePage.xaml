@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ui:BaseContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ui="clr-namespace:Rootfly.Mobile.Core.UI.Pages;assembly=Rootfly.Mobile.Core.UI"
+    xmlns:vm="clr-namespace:EduDriver.Shared.ViewModels;assembly=EduDriver.Shared"
+    x:Class="EduDriver.Views.Phone.LoginPhonePage"
+    x:TypeArguments="vm:LoginViewModel"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False"
+    Title="{Binding Title}">
+
+    <ScrollView>
+        <Grid RowDefinitions="*,Auto,*" Padding="32" RowSpacing="0">
+            <!-- Logo / Branding area -->
+            <VerticalStackLayout Grid.Row="0" VerticalOptions="End" Spacing="8" Padding="0,0,0,32">
+                <Label Text="🚐" FontSize="60" HorizontalOptions="Center" />
+                <Label Text="EduDriver" FontSize="28" FontAttributes="Bold"
+                       HorizontalOptions="Center" TextColor="{StaticResource Primary}" />
+                <Label Text="Safe rides, every day" FontSize="14" TextColor="Gray"
+                       HorizontalOptions="Center" />
+            </VerticalStackLayout>
+
+            <!-- Login form -->
+            <VerticalStackLayout Grid.Row="1" Spacing="16">
+                <Frame Padding="24" CornerRadius="16" BorderColor="Transparent"
+                       BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}"
+                       HasShadow="True">
+                    <VerticalStackLayout Spacing="16">
+                        <Entry Placeholder="{Binding EmailPlaceholder}" Text="{Binding Email}"
+                               Keyboard="Email" AutomationId="EmailEntry"
+                               ClearButtonVisibility="WhileEditing" />
+                        <Entry Placeholder="{Binding PasswordPlaceholder}" Text="{Binding Password}"
+                               IsPassword="True" AutomationId="PasswordEntry" />
+                        <Label Text="{Binding ErrorMessage}" TextColor="{StaticResource Error}"
+                               IsVisible="{Binding ErrorMessage, Converter={StaticResource StringToVisibilityConverter}}"
+                               FontSize="12" />
+                        <Button Text="{Binding LoginButtonText}" Command="{Binding LoginCommand}"
+                                IsEnabled="{Binding IsNotBusy}" HorizontalOptions="Fill"
+                                BackgroundColor="{StaticResource Primary}" TextColor="White"
+                                CornerRadius="12" HeightRequest="48" FontAttributes="Bold" />
+                        <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"
+                                           HorizontalOptions="Center" Color="{StaticResource Primary}" />
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+
+            <!-- Footer -->
+            <VerticalStackLayout Grid.Row="2" VerticalOptions="End" Padding="0,32,0,0">
+                <Label Text="Powered by Rootfly" FontSize="11" TextColor="Gray"
+                       HorizontalOptions="Center" />
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+
+</ui:BaseContentPage>

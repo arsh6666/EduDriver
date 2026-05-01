@@ -1,0 +1,10 @@
+<api type="debug" assembly-name="AndHUD" mvid="c277418aa2ec470e9769ebaedfac6944">
+  <java-to-managed>
+    <entry java-name="androidhud/ProgressWheel" managed-name="AndroidHUD.ProgressWheel, AndHUD" managed-type-token-id="33554438" />
+    <entry java-name="androidhud/ProgressWheel_SpinHandler" managed-name="AndroidHUD.ProgressWheel+SpinHandler, AndHUD" managed-type-token-id="33554445" />
+  </java-to-managed>
+  <managed-to-java>
+    <entry java-name="androidhud/ProgressWheel" managed-name="AndroidHUD.ProgressWheel, AndHUD" managed-type-token-id="33554438" />
+    <entry java-name="androidhud/ProgressWheel_SpinHandler" managed-name="AndroidHUD.ProgressWheel+SpinHandler, AndHUD" managed-type-token-id="33554445" />
+  </managed-to-java>
+</api>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ui:BaseContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ui="clr-namespace:Rootfly.Mobile.Core.UI.Pages;assembly=Rootfly.Mobile.Core.UI"
+    xmlns:vm="clr-namespace:EduDriver.Shared.ViewModels;assembly=EduDriver.Shared"
+    x:Class="EduDriver.Views.Phone.ProfilePhonePage"
+    x:TypeArguments="vm:PlaceholderViewModel"
+    Title="Profile">
+    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+        <Label Text="👤" FontSize="48" HorizontalOptions="Center" />
+        <Label Text="Profile" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" Padding="0,8,0,0" />
+        <Label Text="Coming in Phase 1" FontSize="14" TextColor="Gray" HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ui:BaseContentPage>

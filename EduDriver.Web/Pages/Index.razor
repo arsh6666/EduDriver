@@ -1,0 +1,61 @@
+@page "/"
+@inherits RootflyComponentBase<DashboardViewModel>
+
+<PageTitle>Dashboard</PageTitle>
+
+<MudText Typo="Typo.h4" Class="mb-2">@ViewModel.WelcomeMessage</MudText>
+<MudText Typo="Typo.body2" Color="Color.Secondary" Class="mb-4">@ViewModel.TodayDate</MudText>
+
+@if (ViewModel.IsBusy)
+{
+    <MudProgressLinear Color="Color.Primary" Indeterminate="true" />
+}
+else
+{
+    <MudGrid>
+        <MudItem xs="12" sm="6" md="3">
+            <MudPaper Class="pa-4" Elevation="2">
+                <MudIcon Icon="@Icons.Material.Filled.Route" Color="Color.Primary" />
+                <MudText Typo="Typo.subtitle2">Today's Route</MudText>
+                <MudText Typo="Typo.h6">@ViewModel.TodayRoute</MudText>
+            </MudPaper>
+        </MudItem>
+        <MudItem xs="12" sm="6" md="3">
+            <MudPaper Class="pa-4" Elevation="2">
+                <MudIcon Icon="@Icons.Material.Filled.DirectionsBus" Color="Color.Secondary" />
+                <MudText Typo="Typo.subtitle2">Vehicle</MudText>
+                <MudText Typo="Typo.h6">@ViewModel.VehicleInfo</MudText>
+            </MudPaper>
+        </MudItem>
+        <MudItem xs="12" sm="6" md="3">
+            <MudPaper Class="pa-4" Elevation="2">
+                <MudIcon Icon="@Icons.Material.Filled.People" Color="Color.Tertiary" />
+                <MudText Typo="Typo.subtitle2">Students</MudText>
+                <MudText Typo="Typo.h6">@ViewModel.StudentCount</MudText>
+            </MudPaper>
+        </MudItem>
+        <MudItem xs="12" sm="6" md="3">
+            <MudPaper Class="pa-4" Elevation="2">
+                <MudIcon Icon="@Icons.Material.Filled.Timeline" Color="Color.Info" />
+                <MudText Typo="Typo.subtitle2">Trip Status</MudText>
+                <MudText Typo="Typo.h6">@ViewModel.TripStatus</MudText>
+            </MudPaper>
+        </MudItem>
+
+        <MudItem xs="12" Class="d-flex gap-3">
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" Size="Size.Large"
+                       OnClick="() => ViewModel.StartTripCommand.Execute(null)"
+                       Disabled="ViewModel.HasActiveTrip">
+                @ViewModel.StartTripButtonText
+            </MudButton>
+            <MudButton Variant="Variant.Outlined" Color="Color.Primary"
+                       OnClick="() => ViewModel.ViewRouteCommand.Execute(null)">
+                View Route
+            </MudButton>
+            <MudButton Variant="Variant.Filled" Color="Color.Error"
+                       OnClick="() => ViewModel.SosCommand.Execute(null)">
+                SOS
+            </MudButton>
+        </MudItem>
+    </MudGrid>
+}

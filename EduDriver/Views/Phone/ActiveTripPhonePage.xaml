@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ui:BaseContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ui="clr-namespace:Rootfly.Mobile.Core.UI.Pages;assembly=Rootfly.Mobile.Core.UI"
+    xmlns:vm="clr-namespace:EduDriver.Shared.ViewModels;assembly=EduDriver.Shared"
+    x:Class="EduDriver.Views.Phone.ActiveTripPhonePage"
+    x:TypeArguments="vm:ActiveTripViewModel"
+    Title="{Binding Title}">
+
+    <Grid RowDefinitions="Auto,*,Auto" Padding="0">
+        <!-- Trip header -->
+        <Frame Grid.Row="0" Padding="16" CornerRadius="0" BorderColor="Transparent"
+               BackgroundColor="{StaticResource Primary}" HasShadow="True">
+            <VerticalStackLayout Spacing="6">
+                <HorizontalStackLayout Spacing="8">
+                    <Label Text="🚌" FontSize="20" VerticalOptions="Center" />
+                    <Label Text="{Binding ActiveTrip.RouteName, FallbackValue='Active Trip'}"
+                           FontSize="18" FontAttributes="Bold" TextColor="White" VerticalOptions="Center" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Spacing="16">
+                    <Label TextColor="#CCFFFFFF" FontSize="12">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Vehicle: " />
+                                <Span Text="{Binding ActiveTrip.VehicleNumber, FallbackValue='--'}" FontAttributes="Bold" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label TextColor="#CCFFFFFF" FontSize="12">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Duration: " />
+                                <Span Text="{Binding TripDuration}" FontAttributes="Bold" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </HorizontalStackLayout>
+
+                <!-- Progress bar -->
+                <Grid ColumnDefinitions="*,Auto" Margin="0,8,0,0">
+                    <ProgressBar Grid.Column="0" Progress="{Binding CurrentStopIndex, Converter={StaticResource StopProgressConverter}}"
+                                 ProgressColor="White" BackgroundColor="#44FFFFFF" HeightRequest="6" VerticalOptions="Center" />
+                    <Label Grid.Column="1" Text="{Binding ProgressText}" TextColor="White"
+                           FontSize="11" FontAttributes="Bold" Margin="8,0,0,0" VerticalOptions="Center" />
+                </Grid>
+            </VerticalStackLayout>
+        </Frame>
+
+        <!-- Current stop + student checklist -->
+        <ScrollView Grid.Row="1" Padding="16">
+            <VerticalStackLayout Spacing="12">
+                <!-- Current stop card -->
+                <Frame Padding="16" CornerRadius="12" BorderColor="{StaticResource Primary}"
+                       HasShadow="True"
+                       BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}">
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Current Stop" FontSize="11" TextColor="Gray" />
+                        <Label Text="{Binding CurrentStop.Name, FallbackValue='--'}"
+                               FontSize="18" FontAttributes="Bold" />
+                        <Label Text="{Binding CurrentStop.Address}" FontSize="12" TextColor="Gray" />
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Student checklist header -->
+                <HorizontalStackLayout Spacing="8" Margin="0,8,0,0">
+                    <Label Text="Students at this stop" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
+                    <Button Text="Mark All" Command="{Binding MarkAllBoardedCommand}"
+                            FontSize="12" HeightRequest="32" Padding="12,0"
+                            BackgroundColor="{StaticResource Primary}" TextColor="White"
+                            CornerRadius="16" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+                </HorizontalStackLayout>
+
+                <!-- Student list -->
+                <CollectionView ItemsSource="{Binding CurrentStopStudents}" SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="vm:StudentChecklistItem">
+                            <Frame Padding="12" CornerRadius="10" BorderColor="Transparent"
+                                   HasShadow="True" Margin="0,3"
+                                   BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}">
+                                <Grid ColumnDefinitions="*,Auto">
+                                    <VerticalStackLayout Grid.Column="0" VerticalOptions="Center">
+                                        <Label Text="{Binding StudentName}" FontSize="14" FontAttributes="Bold" />
+                                        <Label Text="{Binding IsBoarded, Converter={StaticResource BoolToBoardingStatusConverter}}"
+                                               FontSize="11" TextColor="Gray" />
+                                    </VerticalStackLayout>
+                                    <CheckBox Grid.Column="1" IsChecked="{Binding IsBoarded}"
+                                              Color="{StaticResource Primary}" VerticalOptions="Center" />
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                    <CollectionView.EmptyView>
+                        <Label Text="No students at this stop" FontSize="14"
+                               TextColor="Gray" HorizontalOptions="Center" Margin="0,20" />
+                    </CollectionView.EmptyView>
+                </CollectionView>
+
+                <!-- Loading -->
+                <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"
+                                   HorizontalOptions="Center" Color="{StaticResource Primary}" />
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Bottom action buttons -->
+        <VerticalStackLayout Grid.Row="2" Spacing="8" Padding="16,12"
+                             BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}">
+            <Button Text="Next Stop →" Command="{Binding NextStopCommand}"
+                    IsVisible="{Binding IsLastStop, Converter={StaticResource InvertBoolConverter}}"
+                    BackgroundColor="{StaticResource Primary}" TextColor="White"
+                    CornerRadius="12" HeightRequest="50" FontAttributes="Bold" FontSize="16" />
+            <Button Text="✓  End Trip" Command="{Binding EndTripCommand}"
+                    IsVisible="{Binding CanEndTrip}"
+                    BackgroundColor="{StaticResource Error}" TextColor="White"
+                    CornerRadius="12" HeightRequest="50" FontAttributes="Bold" FontSize="16" />
+        </VerticalStackLayout>
+    </Grid>
+
+</ui:BaseContentPage>

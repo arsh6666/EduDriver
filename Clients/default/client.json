@@ -1,0 +1,13 @@
+{
+  "clientId": "default",
+  "appName": "EduDriver",
+  "bundleId": "com.rootfly.edudriver",
+  "apiBaseUrl": "https://api.edunet.rootfly.com",
+  "authBaseUrl": null,
+  "tenantId": null,
+  "oauthClientId": "EduDriver_App",
+  "oauthClientSecret": "",
+  "oidcScopes": ["openid", "profile", "email", "offline_access", "Education"],
+  "supportedCultures": ["en", "es", "ar", "hi", "fr"],
+  "sentryDsn": ""
+}

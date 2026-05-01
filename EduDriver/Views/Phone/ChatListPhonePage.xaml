@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ui:BaseContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ui="clr-namespace:Rootfly.Mobile.Core.UI.Pages;assembly=Rootfly.Mobile.Core.UI"
+    xmlns:vm="clr-namespace:EduDriver.Shared.ViewModels;assembly=EduDriver.Shared"
+    xmlns:conv="clr-namespace:EduDriver.Converters"
+    x:Class="EduDriver.Views.Phone.ChatListPhonePage"
+    x:TypeArguments="vm:ChatListViewModel"
+    Title="{Binding Title}">
+
+    <ui:BaseContentPage.Resources>
+        <conv:InitialsConverter x:Key="InitialsConverter" />
+        <conv:IsNotZeroChatConverter x:Key="IsNotZeroConverter" />
+    </ui:BaseContentPage.Resources>
+
+    <Grid RowDefinitions="Auto,*">
+        <!-- Search -->
+        <Border Grid.Row="0" Margin="16,8" StrokeThickness="0" Padding="12,8"
+                BackgroundColor="#F5F5F5">
+            <Border.StrokeShape><RoundRectangle CornerRadius="24" /></Border.StrokeShape>
+            <Entry Placeholder="Search contacts..." FontSize="14"
+                   Text="{Binding SearchQuery}" ReturnCommand="{Binding SearchCommand}" />
+        </Border>
+
+        <!-- Contact List -->
+        <CollectionView Grid.Row="1" ItemsSource="{Binding Contacts}" SelectionMode="None">
+            <CollectionView.EmptyView>
+                <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="8" Padding="0,40">
+                    <Label Text="💬" FontSize="48" HorizontalOptions="Center" />
+                    <Label Text="No conversations yet" FontSize="16" TextColor="#999" HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </CollectionView.EmptyView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border StrokeThickness="0" Padding="16,12" Margin="0">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ChatListViewModel}}, Path=OpenConversationCommand}"
+                                CommandParameter="{Binding}" />
+                        </Border.GestureRecognizers>
+                        <Grid ColumnDefinitions="48,*,Auto" ColumnSpacing="12">
+                            <!-- Avatar -->
+                            <Border Grid.Column="0" WidthRequest="48" HeightRequest="48"
+                                    BackgroundColor="#1A73E8" StrokeThickness="0">
+                                <Border.StrokeShape><RoundRectangle CornerRadius="24" /></Border.StrokeShape>
+                                <Label Text="{Binding UserName, Converter={StaticResource InitialsConverter}}"
+                                       TextColor="White" FontSize="18" FontAttributes="Bold"
+                                       HorizontalOptions="Center" VerticalOptions="Center" />
+                            </Border>
+                            <!-- Name + last message -->
+                            <VerticalStackLayout Grid.Column="1" Spacing="2" VerticalOptions="Center">
+                                <Label Text="{Binding UserName}" FontSize="15" FontAttributes="Bold" TextColor="#1A1A2E" />
+                                <Label Text="{Binding LastMessage}" FontSize="13" TextColor="#888"
+                                       MaxLines="1" LineBreakMode="TailTruncation" />
+                            </VerticalStackLayout>
+                            <!-- Time + unread -->
+                            <VerticalStackLayout Grid.Column="2" Spacing="4" VerticalOptions="Center" HorizontalOptions="End">
+                                <Label Text="{Binding LastMessageTime, StringFormat='{0:HH:mm}'}"
+                                       FontSize="11" TextColor="#999" HorizontalOptions="End" />
+                                <Border IsVisible="{Binding UnreadCount, Converter={StaticResource IsNotZeroConverter}}"
+                                        BackgroundColor="#1A73E8" StrokeThickness="0"
+                                        WidthRequest="22" HeightRequest="22" HorizontalOptions="End">
+                                    <Border.StrokeShape><RoundRectangle CornerRadius="11" /></Border.StrokeShape>
+                                    <Label Text="{Binding UnreadCount}" TextColor="White" FontSize="11"
+                                           HorizontalOptions="Center" VerticalOptions="Center" />
+                                </Border>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ui:BaseContentPage>

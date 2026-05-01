@@ -1,0 +1,93 @@
+@page "/trip"
+@inherits RootflyComponentBase<ActiveTripViewModel>
+
+<PageTitle>Active Trip</PageTitle>
+
+<MudText Typo="Typo.h4" Class="mb-4">Active Trip</MudText>
+
+@if (ViewModel.IsBusy)
+{
+    <MudProgressLinear Color="Color.Primary" Indeterminate="true" />
+}
+else if (ViewModel.ActiveTrip is not null)
+{
+    <MudGrid>
+        <MudItem xs="12" md="8">
+            <MudPaper Class="pa-4" Elevation="2">
+                <div class="d-flex justify-space-between align-center mb-4">
+                    <div>
+                        <MudText Typo="Typo.h6">@ViewModel.ActiveTrip.RouteName</MudText>
+                        <MudText Typo="Typo.body2">@ViewModel.ProgressText</MudText>
+                    </div>
+                    <MudChip T="string" Color="Color.Success" Size="Size.Small">Active</MudChip>
+                </div>
+
+                <MudText Typo="Typo.subtitle2" Class="mb-2">Current Stop: @(ViewModel.CurrentStop?.Name ?? "—")</MudText>
+
+                @if (ViewModel.CurrentStopStudents.Count > 0)
+                {
+                    <MudTable Items="ViewModel.CurrentStopStudents" Hover="true" Elevation="1">
+                        <HeaderContent>
+                            <MudTh>Student</MudTh>
+                            <MudTh>Boarded</MudTh>
+                        </HeaderContent>
+                        <RowTemplate>
+                            <MudTd>@context.StudentName</MudTd>
+                            <MudTd>
+                                <MudCheckBox T="bool" Value="context.IsBoarded" Color="Color.Primary"
+                                             ValueChanged="@(_ => ViewModel.ToggleBoardedCommand.Execute(context))" />
+                            </MudTd>
+                        </RowTemplate>
+                    </MudTable>
+                }
+
+                <div class="d-flex gap-3 mt-4">
+                    <MudButton Variant="Variant.Outlined" Color="Color.Primary"
+                               OnClick="() => ViewModel.MarkAllBoardedCommand.Execute(null)">
+                        Mark All Boarded
+                    </MudButton>
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary"
+                               OnClick="() => ViewModel.NextStopCommand.Execute(null)"
+                               Disabled="ViewModel.IsLastStop">
+                        Next Stop
+                    </MudButton>
+                    @if (ViewModel.CanEndTrip)
+                    {
+                        <MudButton Variant="Variant.Filled" Color="Color.Error"
+                                   OnClick="() => ViewModel.EndTripCommand.Execute(null)">
+                            End Trip
+                        </MudButton>
+                    }
+                </div>
+            </MudPaper>
+        </MudItem>
+
+        <MudItem xs="12" md="4">
+            <MudPaper Class="pa-4" Elevation="2">
+                <MudText Typo="Typo.h6" Class="mb-2">Route Stops</MudText>
+                <MudTimeline TimelinePosition="TimelinePosition.Start">
+                    @for (int i = 0; i < ViewModel.Stops.Count; i++)
+                    {
+                        var stop = ViewModel.Stops[i];
+                        var color = i < ViewModel.CurrentStopIndex ? Color.Success :
+                                    i == ViewModel.CurrentStopIndex ? Color.Primary : Color.Default;
+                        <MudTimelineItem Color="color" Size="Size.Small">
+                            <MudText Typo="Typo.body2">@stop.Name</MudText>
+                        </MudTimelineItem>
+                    }
+                </MudTimeline>
+            </MudPaper>
+
+            <MudPaper Class="pa-4 mt-4" Elevation="2">
+                <MudText Typo="Typo.subtitle2">Trip Duration</MudText>
+                <MudText Typo="Typo.h5">@ViewModel.TripDuration</MudText>
+            </MudPaper>
+        </MudItem>
+    </MudGrid>
+}
+else
+{
+    <MudAlert Severity="Severity.Info">No active trip. Start one from the Dashboard.</MudAlert>
+    <MudButton Variant="Variant.Filled" Color="Color.Primary" Class="mt-4"
+               OnClick="() => Navigation.NavigateToRootAsync()">Go to Dashboard</MudButton>
+}

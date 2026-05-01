@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ui:BaseContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ui="clr-namespace:Rootfly.Mobile.Core.UI.Pages;assembly=Rootfly.Mobile.Core.UI"
+    xmlns:vm="clr-namespace:EduDriver.Shared.ViewModels;assembly=EduDriver.Shared"
+    xmlns:converters="clr-namespace:EduDriver.Converters"
+    x:Class="EduDriver.Views.Phone.DashboardPhonePage"
+    x:TypeArguments="vm:DashboardViewModel"
+    Title="{Binding Title}">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="16" Padding="16">
+            <!-- Welcome header with gradient -->
+            <Frame Padding="24" CornerRadius="16" BorderColor="Transparent"
+                   BackgroundColor="{StaticResource Primary}" HasShadow="True">
+                <VerticalStackLayout Spacing="4">
+                    <Label Text="{Binding WelcomeMessage}" FontSize="22" FontAttributes="Bold" TextColor="White" />
+                    <Label Text="{Binding TodayDate}" FontSize="13" TextColor="#CCFFFFFF" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Trip status indicator -->
+            <Frame Padding="12,8" CornerRadius="8" BorderColor="Transparent"
+                   BackgroundColor="{Binding HasActiveTrip, Converter={StaticResource BoolToTripStatusColorConverter}}"
+                   HasShadow="False" HorizontalOptions="Fill">
+                <HorizontalStackLayout Spacing="8" HorizontalOptions="Center">
+                    <Label Text="{Binding HasActiveTrip, Converter={StaticResource BoolToTripIconConverter}}"
+                           FontSize="16" VerticalOptions="Center" />
+                    <Label Text="{Binding TripStatus}" FontSize="14" FontAttributes="Bold"
+                           TextColor="White" VerticalOptions="Center" />
+                </HorizontalStackLayout>
+            </Frame>
+
+            <!-- Route info card -->
+            <Frame Padding="20" CornerRadius="12" BorderColor="Transparent" HasShadow="True"
+                   BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}">
+                <VerticalStackLayout Spacing="12">
+                    <HorizontalStackLayout Spacing="8">
+                        <Label Text="🗺️" FontSize="20" VerticalOptions="Center" />
+                        <Label Text="Today's Route" FontSize="16" FontAttributes="Bold" VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                    <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto" RowSpacing="10" ColumnSpacing="12">
+                        <Label Grid.Row="0" Grid.Column="0" Text="Route:" TextColor="Gray" FontSize="14" />
+                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding TodayRoute}" FontSize="14" FontAttributes="Bold" />
+                        <Label Grid.Row="1" Grid.Column="0" Text="Vehicle:" TextColor="Gray" FontSize="14" />
+                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding VehicleInfo}" FontSize="14" FontAttributes="Bold" />
+                        <Label Grid.Row="2" Grid.Column="0" Text="Students:" TextColor="Gray" FontSize="14" />
+                        <Label Grid.Row="2" Grid.Column="1" Text="{Binding StudentCount}" FontSize="14" FontAttributes="Bold" />
+                    </Grid>
+
+                    <!-- View Route link -->
+                    <Button Text="View Route Details →" Command="{Binding ViewRouteCommand}"
+                            BackgroundColor="Transparent" TextColor="{StaticResource Primary}"
+                            FontSize="13" HorizontalOptions="End" Padding="0"
+                            FontAttributes="Bold" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Start Trip / View Active Trip button -->
+            <Button Text="{Binding StartTripButtonText}" Command="{Binding StartTripCommand}"
+                    IsEnabled="{Binding IsNotBusy}" HorizontalOptions="Fill"
+                    BackgroundColor="{StaticResource Primary}" TextColor="White"
+                    CornerRadius="12" HeightRequest="56" FontAttributes="Bold" FontSize="18"
+                    Margin="0,8,0,0" />
+
+            <!-- Loading -->
+            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"
+                               HorizontalOptions="Center" Color="{StaticResource Primary}" />
+
+            <!-- SOS button -->
+            <Button Text="🚨  SOS Emergency" Command="{Binding SosCommand}"
+                    BackgroundColor="{StaticResource Error}" TextColor="White"
+                    CornerRadius="12" HeightRequest="52" FontAttributes="Bold" FontSize="16"
+                    HorizontalOptions="Fill" Margin="0,16,0,0" />
+
+            <!-- Logout -->
+            <Button Text="Logout" Command="{Binding LogoutCommand}" Margin="0,16,0,0"
+                    BackgroundColor="Transparent" TextColor="{StaticResource Error}"
+                    HorizontalOptions="Center" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ui:BaseContentPage>

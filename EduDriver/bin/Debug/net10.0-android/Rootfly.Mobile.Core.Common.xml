@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rootfly.Mobile.Core.Common</name>
+    </assembly>
+    <members>
+        <member name="M:Rootfly.Mobile.Core.Common.Abstractions.ILocalizationService.GetStringAsync(System.String)">
+            <summary>
+            Gets a localized string by key. Returns the key itself if not found.
+            </summary>
+        </member>
+        <member name="M:Rootfly.Mobile.Core.Common.Abstractions.ILocalizationService.GetStringAsync(System.String,System.String)">
+            <summary>
+            Gets a localized string by resource name and key.
+            </summary>
+        </member>
+        <member name="M:Rootfly.Mobile.Core.Common.Abstractions.ILocalizationService.SetCultureAsync(System.String)">
+            <summary>
+            Sets the current culture and reloads translations from the server.
+            </summary>
+        </member>
+        <member name="M:Rootfly.Mobile.Core.Common.Abstractions.ILocalizationService.GetCurrentCulture">
+            <summary>
+            Gets the current active culture code (e.g. "en", "fr").
+            </summary>
+        </member>
+        <member name="M:Rootfly.Mobile.Core.Common.Abstractions.ILocalizationService.GetSupportedCultures">
+            <summary>
+            Gets the list of supported culture codes from the client config.
+            </summary>
+        </member>
+        <member name="T:Rootfly.Mobile.Core.Common.ViewModels.BaseListViewModel`1">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:Rootfly.Mobile.Core.Common.ViewModels.BaseListViewModel`1.SelectedItem">
+            <inheritdoc cref="F:Rootfly.Mobile.Core.Common.ViewModels.BaseListViewModel`1._selectedItem"/>
+        </member>
+        <member name="P:Rootfly.Mobile.Core.Common.ViewModels.BaseListViewModel`1.SearchQuery">
+            <inheritdoc cref="F:Rootfly.Mobile.Core.Common.ViewModels.BaseListViewModel`1._searchQuery"/>
+        </member>
+        <member name="P:Rootfly.Mobile.Core.Common.ViewModels.BaseListViewModel`1.IsRefreshing">
+            <inheritdoc cref="F:Rootfly.Mobile.Core.Common.ViewModels.BaseListViewModel`1._isRefreshing"/>
+        </member>
+        <member name="P:Rootfly.Mobile.Core.Common.ViewModels.BaseListViewModel`1.HasMoreItems">
+            <inheritdoc cref="F:Rootfly.Mobile.Core.Common.ViewModels.BaseListViewModel`1._hasMoreItems"/>
+        </member>
+        <member name="M:Rootfly.Mobile.Core.Common.ViewModels.BaseListViewModel`1.OnSearchQueryChanged(System.String)">
+            <summary>Executes the logic for when <see cref="P:Rootfly.Mobile.Core.Common.ViewModels.BaseListViewModel`1.SearchQuery"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:Rootfly.Mobile.Core.Common.ViewModels.BaseListViewModel`1.SearchQuery"/> is changed.</remarks>
+        </member>
+        <member name="F:Rootfly.Mobile.Core.Common.ViewModels.BaseListViewModel`1.refreshCommand">
+            <summary>The backing field for <see cref="P:Rootfly.Mobile.Core.Common.ViewModels.BaseListViewModel`1.RefreshCommand"/>.</summary>
+        </member>
+        <member name="P:Rootfly.Mobile.Core.Common.ViewModels.BaseListViewModel`1.RefreshCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Rootfly.Mobile.Core.Common.ViewModels.BaseListViewModel`1.RefreshAsync"/>.</summary>
+        </member>
+        <member name="F:Rootfly.Mobile.Core.Common.ViewModels.BaseListViewModel`1.loadMoreCommand">
+            <summary>The backing field for <see cref="P:Rootfly.Mobile.Core.Common.ViewModels.BaseListViewModel`1.LoadMoreCommand"/>.</summary>
+        </member>
+        <member name="P:Rootfly.Mobile.Core.Common.ViewModels.BaseListViewModel`1.LoadMoreCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Rootfly.Mobile.Core.Common.ViewModels.BaseListViewModel`1.LoadMoreAsync"/>.</summary>
+        </member>
+        <member name="T:Rootfly.Mobile.Core.Common.ViewModels.BaseViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:Rootfly.Mobile.Core.Common.ViewModels.BaseViewModel.IsBusy">
+            <inheritdoc cref="F:Rootfly.Mobile.Core.Common.ViewModels.BaseViewModel._isBusy"/>
+        </member>
+        <member name="P:Rootfly.Mobile.Core.Common.ViewModels.BaseViewModel.ErrorMessage">
+            <inheritdoc cref="F:Rootfly.Mobile.Core.Common.ViewModels.BaseViewModel._errorMessage"/>
+        </member>
+        <member name="P:Rootfly.Mobile.Core.Common.ViewModels.BaseViewModel.Title">
+            <inheritdoc cref="F:Rootfly.Mobile.Core.Common.ViewModels.BaseViewModel._title"/>
+        </member>
+        <member name="M:Rootfly.Mobile.Core.Common.ViewModels.BaseViewModel.OnIsBusyChanged(System.Boolean)">
+            <summary>Executes the logic for when <see cref="P:Rootfly.Mobile.Core.Common.ViewModels.BaseViewModel.IsBusy"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:Rootfly.Mobile.Core.Common.ViewModels.BaseViewModel.IsBusy"/> is changed.</remarks>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedItem">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedItem" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SearchQuery">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SearchQuery" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsRefreshing">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsRefreshing" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HasMoreItems">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HasMoreItems" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ErrorMessage">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ErrorMessage" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Title">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Title" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedItem">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedItem" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SearchQuery">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SearchQuery" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsRefreshing">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsRefreshing" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HasMoreItems">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HasMoreItems" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ErrorMessage">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ErrorMessage" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Title">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Title" generated properties.</summary>
+        </member>
+    </members>
+</doc>

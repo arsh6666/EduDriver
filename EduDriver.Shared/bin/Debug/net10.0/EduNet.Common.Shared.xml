@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EduNet.Common.Shared</name>
+    </assembly>
+    <members>
+        <member name="T:EduNet.Common.Shared.Auth.Services.MockAuthService">
+            <summary>
+            Mock auth service for development/testing only.
+            Does NOT implement ISingletonDependency to avoid competing with OpenIddictAuthService.
+            </summary>
+        </member>
+        <member name="T:EduNet.Common.Shared.Localization.Dtos.AbpLocalizationDto">
+            <summary>
+            Maps the ABP <c>GET /api/abp/application-localization</c> response.
+            </summary>
+        </member>
+    </members>
+</doc>

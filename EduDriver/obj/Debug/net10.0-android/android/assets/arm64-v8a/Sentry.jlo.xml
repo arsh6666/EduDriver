@@ -1,0 +1,69 @@
+<api>
+  <jcw-types>
+    <type name="AndroidDiagnosticLogger" package="crc64d6ffa46988e9e3ab" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="java.lang.Object" partial_assembly_qualified_name="Sentry.Android.AndroidDiagnosticLogger, Sentry">
+      <implemented_interfaces>
+        <interface name="io.sentry.ILogger" />
+      </implemented_interfaces>
+      <constructors>
+        <constructor name="AndroidDiagnosticLogger" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+      </constructors>
+      <methods>
+        <method name="isEnabled" method="n_isEnabled:(Lio/sentry/SentryLevel;)Z:GetIsEnabled_Lio_sentry_SentryLevel_Handler:Sentry.JavaSdk.ILoggerInvoker, Sentry.Bindings.Android" jni_signature="(Lio/sentry/SentryLevel;)Z" params="io.sentry.SentryLevel p0" retval="boolean" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+        <method name="log" method="n_log:(Lio/sentry/SentryLevel;Ljava/lang/String;[Ljava/lang/Object;)V:GetLog_Lio_sentry_SentryLevel_Ljava_lang_String_arrayLjava_lang_Object_Handler:Sentry.JavaSdk.ILoggerInvoker, Sentry.Bindings.Android" jni_signature="(Lio/sentry/SentryLevel;Ljava/lang/String;[Ljava/lang/Object;)V" params="io.sentry.SentryLevel p0, java.lang.String p1, java.lang.Object[] p2" retval="void" is_dynamically_registered="True" super_call="p0, p1, p2" activate_call="p0, p1, p2" />
+        <method name="log" method="n_log:(Lio/sentry/SentryLevel;Ljava/lang/String;Ljava/lang/Throwable;)V:GetLog_Lio_sentry_SentryLevel_Ljava_lang_String_Ljava_lang_Throwable_Handler:Sentry.JavaSdk.ILoggerInvoker, Sentry.Bindings.Android" jni_signature="(Lio/sentry/SentryLevel;Ljava/lang/String;Ljava/lang/Throwable;)V" params="io.sentry.SentryLevel p0, java.lang.String p1, java.lang.Throwable p2" retval="void" is_dynamically_registered="True" super_call="p0, p1, p2" activate_call="p0, p1, p2" />
+        <method name="log" method="n_log:(Lio/sentry/SentryLevel;Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V:GetLog_Lio_sentry_SentryLevel_Ljava_lang_Throwable_Ljava_lang_String_arrayLjava_lang_Object_Handler:Sentry.JavaSdk.ILoggerInvoker, Sentry.Bindings.Android" jni_signature="(Lio/sentry/SentryLevel;Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V" params="io.sentry.SentryLevel p0, java.lang.Throwable p1, java.lang.String p2, java.lang.Object[] p3" retval="void" is_dynamically_registered="True" super_call="p0, p1, p2, p3" activate_call="p0, p1, p2, p3" />
+      </methods>
+    </type>
+    <type name="BeforeBreadcrumbCallback" package="crc64d42650af502c5fe4" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="java.lang.Object" partial_assembly_qualified_name="Sentry.Android.Callbacks.BeforeBreadcrumbCallback, Sentry">
+      <implemented_interfaces>
+        <interface name="io.sentry.SentryOptions.BeforeBreadcrumbCallback" />
+      </implemented_interfaces>
+      <constructors>
+        <constructor name="BeforeBreadcrumbCallback" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+      </constructors>
+      <methods>
+        <method name="execute" method="n_execute:(Lio/sentry/Breadcrumb;Lio/sentry/Hint;)Lio/sentry/Breadcrumb;:GetExecute_Lio_sentry_Breadcrumb_Lio_sentry_Hint_Handler:Sentry.JavaSdk.SentryOptions+IBeforeBreadcrumbCallbackInvoker, Sentry.Bindings.Android" jni_signature="(Lio/sentry/Breadcrumb;Lio/sentry/Hint;)Lio/sentry/Breadcrumb;" params="io.sentry.Breadcrumb p0, io.sentry.Hint p1" retval="io.sentry.Breadcrumb" is_dynamically_registered="True" super_call="p0, p1" activate_call="p0, p1" />
+      </methods>
+    </type>
+    <type name="BeforeSendCallback" package="crc64d42650af502c5fe4" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="java.lang.Object" partial_assembly_qualified_name="Sentry.Android.Callbacks.BeforeSendCallback, Sentry">
+      <implemented_interfaces>
+        <interface name="io.sentry.SentryOptions.BeforeSendCallback" />
+      </implemented_interfaces>
+      <constructors>
+        <constructor name="BeforeSendCallback" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+      </constructors>
+      <methods>
+        <method name="execute" method="n_execute:(Lio/sentry/SentryEvent;Lio/sentry/Hint;)Lio/sentry/SentryEvent;:GetExecute_Lio_sentry_SentryEvent_Lio_sentry_Hint_Handler:Sentry.JavaSdk.SentryOptions+IBeforeSendCallbackInvoker, Sentry.Bindings.Android" jni_signature="(Lio/sentry/SentryEvent;Lio/sentry/Hint;)Lio/sentry/SentryEvent;" params="io.sentry.SentryEvent p0, io.sentry.Hint p1" retval="io.sentry.SentryEvent" is_dynamically_registered="True" super_call="p0, p1" activate_call="p0, p1" />
+      </methods>
+    </type>
+    <type name="OptionsConfigurationCallback" package="crc64d42650af502c5fe4" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="java.lang.Object" partial_assembly_qualified_name="Sentry.Android.Callbacks.OptionsConfigurationCallback, Sentry">
+      <implemented_interfaces>
+        <interface name="io.sentry.Sentry.OptionsConfiguration" />
+      </implemented_interfaces>
+      <constructors>
+        <constructor name="OptionsConfigurationCallback" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+      </constructors>
+      <methods>
+        <method name="configure" method="n_configure:(Lio/sentry/SentryOptions;)V:GetConfigure_Lio_sentry_SentryOptions_Handler:Sentry.JavaSdk.Sentry+IOptionsConfigurationInvoker, Sentry.Bindings.Android" jni_signature="(Lio/sentry/SentryOptions;)V" params="io.sentry.SentryOptions p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+      </methods>
+    </type>
+    <type name="TracesSamplerCallback" package="crc64d42650af502c5fe4" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="java.lang.Object" partial_assembly_qualified_name="Sentry.Android.Callbacks.TracesSamplerCallback, Sentry">
+      <implemented_interfaces>
+        <interface name="io.sentry.SentryOptions.TracesSamplerCallback" />
+      </implemented_interfaces>
+      <constructors>
+        <constructor name="TracesSamplerCallback" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+      </constructors>
+      <methods>
+        <method name="sample" method="n_sample:(Lio/sentry/SamplingContext;)Ljava/lang/Double;:GetSample_Lio_sentry_SamplingContext_Handler:Sentry.JavaSdk.SentryOptions+ITracesSamplerCallbackInvoker, Sentry.Bindings.Android" jni_signature="(Lio/sentry/SamplingContext;)Ljava/lang/Double;" params="io.sentry.SamplingContext p0" retval="java.lang.Double" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+      </methods>
+    </type>
+  </jcw-types>
+  <acw-types partial-assembly-name="Sentry" module-name="Sentry.dll">
+    <type assembly-qualified-name="Sentry.Android.AndroidDiagnosticLogger, Sentry, Version=5.8.0.0, Culture=neutral, PublicKeyToken=fba2ec45388e2af0" compat-jni-name="sentry.android.AndroidDiagnosticLogger" java-key="crc64d6ffa46988e9e3ab.AndroidDiagnosticLogger" managed-key="Sentry.Android.AndroidDiagnosticLogger" partial-assembly-qualified-name="Sentry.Android.AndroidDiagnosticLogger, Sentry" />
+    <type assembly-qualified-name="Sentry.Android.Callbacks.BeforeBreadcrumbCallback, Sentry, Version=5.8.0.0, Culture=neutral, PublicKeyToken=fba2ec45388e2af0" compat-jni-name="sentry.android.callbacks.BeforeBreadcrumbCallback" java-key="crc64d42650af502c5fe4.BeforeBreadcrumbCallback" managed-key="Sentry.Android.Callbacks.BeforeBreadcrumbCallback" partial-assembly-qualified-name="Sentry.Android.Callbacks.BeforeBreadcrumbCallback, Sentry" />
+    <type assembly-qualified-name="Sentry.Android.Callbacks.BeforeSendCallback, Sentry, Version=5.8.0.0, Culture=neutral, PublicKeyToken=fba2ec45388e2af0" compat-jni-name="sentry.android.callbacks.BeforeSendCallback" java-key="crc64d42650af502c5fe4.BeforeSendCallback" managed-key="Sentry.Android.Callbacks.BeforeSendCallback" partial-assembly-qualified-name="Sentry.Android.Callbacks.BeforeSendCallback, Sentry" />
+    <type assembly-qualified-name="Sentry.Android.Callbacks.OptionsConfigurationCallback, Sentry, Version=5.8.0.0, Culture=neutral, PublicKeyToken=fba2ec45388e2af0" compat-jni-name="sentry.android.callbacks.OptionsConfigurationCallback" java-key="crc64d42650af502c5fe4.OptionsConfigurationCallback" managed-key="Sentry.Android.Callbacks.OptionsConfigurationCallback" partial-assembly-qualified-name="Sentry.Android.Callbacks.OptionsConfigurationCallback, Sentry" />
+    <type assembly-qualified-name="Sentry.Android.Callbacks.TracesSamplerCallback, Sentry, Version=5.8.0.0, Culture=neutral, PublicKeyToken=fba2ec45388e2af0" compat-jni-name="sentry.android.callbacks.TracesSamplerCallback" java-key="crc64d42650af502c5fe4.TracesSamplerCallback" managed-key="Sentry.Android.Callbacks.TracesSamplerCallback" partial-assembly-qualified-name="Sentry.Android.Callbacks.TracesSamplerCallback, Sentry" />
+  </acw-types>
+</api>

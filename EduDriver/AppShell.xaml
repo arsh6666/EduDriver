@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="EduDriver.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:phone="clr-namespace:EduDriver.Views.Phone"
+    Shell.FlyoutBehavior="Disabled">
+
+    <!-- Login (no tabs) -->
+    <ShellContent
+        Title="Login"
+        ContentTemplate="{DataTemplate phone:LoginPhonePage}"
+        Route="Login"
+        Shell.TabBarIsVisible="False" />
+
+    <!-- Main tabs -->
+    <TabBar Route="Main">
+        <ShellContent
+            Title="Dashboard"
+            ContentTemplate="{DataTemplate phone:DashboardPhonePage}"
+            Route="Dashboard"
+            Icon="{OnPlatform Default='home_24.png'}" />
+
+        <ShellContent
+            Title="Route"
+            ContentTemplate="{DataTemplate phone:RoutePhonePage}"
+            Route="Route"
+            Icon="{OnPlatform Default='map_24.png'}" />
+
+        <ShellContent
+            Title="Chat"
+            ContentTemplate="{DataTemplate phone:ChatListPhonePage}"
+            Route="ChatList"
+            Icon="{OnPlatform Default='chat_24.png'}" />
+
+        <ShellContent
+            Title="Profile"
+            ContentTemplate="{DataTemplate phone:ProfilePhonePage}"
+            Route="Profile"
+            Icon="{OnPlatform Default='person_24.png'}" />
+    </TabBar>
+
+</Shell>

@@ -1,0 +1,37 @@
+@page "/chat"
+@inherits RootflyComponentBase<ChatListViewModel>
+
+<PageTitle>Chat</PageTitle>
+
+<MudText Typo="Typo.h4" Class="mb-4">Messages</MudText>
+
+@if (ViewModel.IsBusy)
+{
+    <MudProgressLinear Color="Color.Primary" Indeterminate="true" />
+}
+else if (ViewModel.Contacts.Count > 0)
+{
+    <MudList T="string">
+        @foreach (var contact in ViewModel.Contacts)
+        {
+            <MudListItem OnClick="() => ViewModel.OpenConversationCommand.Execute(contact)">
+                <div class="d-flex align-center">
+                    <MudAvatar Color="Color.Primary" Class="mr-3">@contact.UserName.FirstOrDefault()</MudAvatar>
+                    <div>
+                        <MudText Typo="Typo.body1">@contact.UserName</MudText>
+                        <MudText Typo="Typo.caption" Color="Color.Secondary">@contact.LastMessage</MudText>
+                    </div>
+                    @if (contact.UnreadCount > 0)
+                    {
+                        <MudSpacer />
+                        <MudBadge Content="@contact.UnreadCount" Color="Color.Error" />
+                    }
+                </div>
+            </MudListItem>
+        }
+    </MudList>
+}
+else
+{
+    <MudAlert Severity="Severity.Info">No conversations yet.</MudAlert>
+}

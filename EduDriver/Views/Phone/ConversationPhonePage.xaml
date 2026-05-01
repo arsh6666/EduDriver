@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ui:BaseContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ui="clr-namespace:Rootfly.Mobile.Core.UI.Pages;assembly=Rootfly.Mobile.Core.UI"
+    xmlns:vm="clr-namespace:EduDriver.Shared.ViewModels;assembly=EduDriver.Shared"
+    xmlns:conv="clr-namespace:EduDriver.Converters"
+    x:Class="EduDriver.Views.Phone.ConversationPhonePage"
+    x:TypeArguments="vm:ConversationViewModel"
+    Title="{Binding TargetUserName}">
+
+    <ui:BaseContentPage.Resources>
+        <conv:MessageBubbleColorConverter x:Key="MessageBubbleColorConverter" />
+        <conv:MessageAlignConverter x:Key="MessageAlignConverter" />
+        <conv:MessageTextColorConverter x:Key="MessageTextColorConverter" />
+        <conv:MessageTimeColorConverter x:Key="MessageTimeColorConverter" />
+    </ui:BaseContentPage.Resources>
+
+    <Grid RowDefinitions="*,Auto" RowSpacing="0">
+        <!-- Messages -->
+        <CollectionView Grid.Row="0" ItemsSource="{Binding Messages}" SelectionMode="None"
+                        ItemsUpdatingScrollMode="KeepLastItemInView" Margin="8,0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="4,2">
+                        <Border MaximumWidthRequest="280" Padding="12,8"
+                                BackgroundColor="{Binding IsOwnMessage, Converter={StaticResource MessageBubbleColorConverter}}"
+                                StrokeThickness="0"
+                                HorizontalOptions="{Binding IsOwnMessage, Converter={StaticResource MessageAlignConverter}}">
+                            <Border.StrokeShape><RoundRectangle CornerRadius="16" /></Border.StrokeShape>
+                            <VerticalStackLayout Spacing="2">
+                                <Label Text="{Binding Text}" FontSize="14"
+                                       TextColor="{Binding IsOwnMessage, Converter={StaticResource MessageTextColorConverter}}" />
+                                <Label Text="{Binding CreationTime, StringFormat='{0:HH:mm}'}" FontSize="10"
+                                       TextColor="{Binding IsOwnMessage, Converter={StaticResource MessageTimeColorConverter}}"
+                                       HorizontalOptions="End" />
+                            </VerticalStackLayout>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Input Bar -->
+        <Border Grid.Row="1" StrokeThickness="0" Padding="8" BackgroundColor="#F5F5F5">
+            <Grid ColumnDefinitions="*,48" ColumnSpacing="8">
+                <Border Grid.Column="0" StrokeThickness="0" Padding="12,8" BackgroundColor="White">
+                    <Border.StrokeShape><RoundRectangle CornerRadius="24" /></Border.StrokeShape>
+                    <Entry Placeholder="Type a message..." FontSize="14"
+                           Text="{Binding MessageText}" ReturnCommand="{Binding SendMessageCommand}" />
+                </Border>
+                <Button Grid.Column="1" Text="➤" FontSize="20"
+                        BackgroundColor="#1A73E8" TextColor="White"
+                        WidthRequest="48" HeightRequest="48" CornerRadius="24"
+                        Command="{Binding SendMessageCommand}" />
+            </Grid>
+        </Border>
+    </Grid>
+</ui:BaseContentPage>

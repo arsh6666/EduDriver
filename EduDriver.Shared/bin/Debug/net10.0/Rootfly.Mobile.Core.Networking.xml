@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rootfly.Mobile.Core.Networking</name>
+    </assembly>
+    <members>
+        <member name="T:Rootfly.Mobile.Core.Networking.REST.ApplicationConfiguration.Dtos.AbpApplicationConfigurationDto">
+            <summary>
+            Maps the ABP <c>GET /api/abp/application-configuration</c> response.
+            </summary>
+        </member>
+        <member name="T:Rootfly.Mobile.Core.Networking.REST.ApplicationConfiguration.IAbpApplicationConfigurationService">
+            <summary>
+            Fetches and caches the ABP application configuration from the server.
+            Provides access to auth policies, settings, features, current user/tenant, and localization info.
+            </summary>
+        </member>
+        <member name="M:Rootfly.Mobile.Core.Networking.REST.ApplicationConfiguration.IAbpApplicationConfigurationService.GetAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets the cached configuration, or fetches from server if not loaded.
+            </summary>
+        </member>
+        <member name="M:Rootfly.Mobile.Core.Networking.REST.ApplicationConfiguration.IAbpApplicationConfigurationService.RefreshAsync(System.Threading.CancellationToken)">
+            <summary>
+            Forces a refresh from the server.
+            </summary>
+        </member>
+        <member name="M:Rootfly.Mobile.Core.Networking.REST.ApplicationConfiguration.IAbpApplicationConfigurationService.GetSetting(System.String)">
+            <summary>
+            Gets a setting value by key.
+            </summary>
+        </member>
+        <member name="M:Rootfly.Mobile.Core.Networking.REST.ApplicationConfiguration.IAbpApplicationConfigurationService.GetFeature(System.String)">
+            <summary>
+            Gets a server-side feature value by key.
+            </summary>
+        </member>
+        <member name="M:Rootfly.Mobile.Core.Networking.REST.ApplicationConfiguration.IAbpApplicationConfigurationService.IsGranted(System.String)">
+            <summary>
+            Checks whether the current user has a specific policy/permission.
+            </summary>
+        </member>
+        <member name="P:Rootfly.Mobile.Core.Networking.REST.ApplicationConfiguration.IAbpApplicationConfigurationService.CurrentUser">
+            <summary>
+            Gets the current user information from the configuration.
+            </summary>
+        </member>
+        <member name="P:Rootfly.Mobile.Core.Networking.REST.ApplicationConfiguration.IAbpApplicationConfigurationService.CurrentTenant">
+            <summary>
+            Gets the current tenant information from the configuration.
+            </summary>
+        </member>
+        <member name="P:Rootfly.Mobile.Core.Networking.REST.ApplicationConfiguration.IAbpApplicationConfigurationService.IsLoaded">
+            <summary>
+            Whether the configuration has been loaded at least once.
+            </summary>
+        </member>
+        <member name="M:Rootfly.Mobile.Core.Networking.REST.ApplicationConfiguration.IAbpApplicationConfigurationService.Clear">
+            <summary>
+            Clears the cached configuration (e.g., on logout).
+            </summary>
+        </member>
+        <member name="T:Rootfly.Mobile.Core.Networking.REST.Localization.AbpLocalizationService">
+            <summary>
+            Localization service that fetches ABP localization resources from the server.
+            Caches resources per culture in memory.
+            </summary>
+        </member>
+        <member name="T:Rootfly.Mobile.Core.Networking.REST.Localization.Dtos.AbpLocalizationDto">
+            <summary>
+            Maps the ABP <c>GET /api/abp/application-localization</c> response.
+            </summary>
+        </member>
+    </members>
+</doc>

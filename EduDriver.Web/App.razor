@@ -1,0 +1,57 @@
+<MudThemeProvider Theme="_theme" />
+<MudPopoverProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(Shared.MainLayout)" />
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+    </Found>
+    <NotFound>
+        <PageTitle>Not found</PageTitle>
+        <LayoutView Layout="@typeof(Shared.MainLayout)">
+            <MudText Typo="Typo.h4" Class="pa-8">Page not found</MudText>
+        </LayoutView>
+    </NotFound>
+</Router>
+
+@code {
+    private readonly MudTheme _theme = new()
+    {
+        PaletteLight = new PaletteLight
+        {
+            Primary = "#1A73E8",
+            Secondary = "#00897B",
+            Tertiary = "#FFB300",
+            Error = "#D32F2F",
+            AppbarBackground = "#1A73E8",
+            Background = "#F5F5F5",
+            Surface = "#FFFFFF"
+        },
+        PaletteDark = new PaletteDark
+        {
+            Primary = "#1A73E8",
+            Secondary = "#00897B",
+            Tertiary = "#FFB300",
+            Error = "#D32F2F",
+            AppbarBackground = "#1E1E2E",
+            Background = "#121212",
+            Surface = "#1E1E2E"
+        },
+        Typography = new Typography
+        {
+            Default = new DefaultTypography { FontFamily = ["Inter", "Helvetica", "Arial", "sans-serif"] },
+            H1 = new H1Typography { FontFamily = ["Poppins", "Helvetica", "Arial", "sans-serif"] },
+            H2 = new H2Typography { FontFamily = ["Poppins", "Helvetica", "Arial", "sans-serif"] },
+            H3 = new H3Typography { FontFamily = ["Poppins", "Helvetica", "Arial", "sans-serif"] },
+            H4 = new H4Typography { FontFamily = ["Poppins", "Helvetica", "Arial", "sans-serif"] },
+            H5 = new H5Typography { FontFamily = ["Poppins", "Helvetica", "Arial", "sans-serif"] },
+            H6 = new H6Typography { FontFamily = ["Poppins", "Helvetica", "Arial", "sans-serif"] }
+        },
+        LayoutProperties = new LayoutProperties
+        {
+            DefaultBorderRadius = "12px"
+        }
+    };
+}

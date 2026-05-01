@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <PackageId>EduDriver.Shared</PackageId>
+    <Description>Shared ViewModels, DTOs, services and mapping for EduDriver — referenced by both MAUI and Blazor WASM apps.</Description>
+    <RootNamespace>EduDriver.Shared</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageReference Include="Volo.Abp.Mapperly" Version="10.3.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../../../Core/Rootfly.Mobile.Core.Common/Rootfly.Mobile.Core.Common.csproj" />
+    <ProjectReference Include="../../../../Core/Rootfly.Mobile.Core.Security/Rootfly.Mobile.Core.Security.csproj" />
+    <ProjectReference Include="../../../../Core/Rootfly.Mobile.Core.WhiteLabel/Rootfly.Mobile.Core.WhiteLabel.csproj" />
+    <ProjectReference Include="../../../../Core/Rootfly.Mobile.Core.Networking/Rootfly.Mobile.Core.Networking.csproj" />
+    <ProjectReference Include="../../../../Core/Rootfly.Mobile.Core.Storage/Rootfly.Mobile.Core.Storage.csproj" />
+  </ItemGroup>
+</Project>

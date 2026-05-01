@@ -1,0 +1,119 @@
+<api>
+  <jcw-types>
+    <type name="ActionSheetListAdapter" package="crc641a3c7a9fa982c507" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="android.widget.ArrayAdapter" partial_assembly_qualified_name="Controls.UserDialogs.Maui.ActionSheetListAdapter, Controls.UserDialogs.Maui">
+      <constructors>
+        <constructor name="ActionSheetListAdapter" method="n_.ctor:(Landroid/content/Context;I)V:" jni_signature="(Landroid/content/Context;I)V" managed_parameters="Android.Content.Context, Mono.Android:System.Int32, System.Private.CoreLib" params="android.content.Context p0, int p1" retval="void" is_dynamically_registered="True" super_call="p0, p1" activate_call="p0, p1" />
+        <constructor name="ActionSheetListAdapter" method="n_.ctor:(Landroid/content/Context;II)V:" jni_signature="(Landroid/content/Context;II)V" managed_parameters="Android.Content.Context, Mono.Android:System.Int32, System.Private.CoreLib:System.Int32, System.Private.CoreLib" params="android.content.Context p0, int p1, int p2" retval="void" is_dynamically_registered="True" super_call="p0, p1, p2" activate_call="p0, p1, p2" />
+        <constructor name="ActionSheetListAdapter" method="n_.ctor:(Landroid/content/Context;I[Ljava/lang/Object;)V:" jni_signature="(Landroid/content/Context;I[Ljava/lang/Object;)V" managed_parameters="Android.Content.Context, Mono.Android:System.Int32, System.Private.CoreLib:T[], Mono.Android" params="android.content.Context p0, int p1, java.lang.Object[] p2" retval="void" is_dynamically_registered="True" super_call="p0, p1, p2" activate_call="p0, p1, p2" />
+        <constructor name="ActionSheetListAdapter" method="n_.ctor:(Landroid/content/Context;II[Ljava/lang/Object;)V:" jni_signature="(Landroid/content/Context;II[Ljava/lang/Object;)V" managed_parameters="Android.Content.Context, Mono.Android:System.Int32, System.Private.CoreLib:System.Int32, System.Private.CoreLib:T[], Mono.Android" params="android.content.Context p0, int p1, int p2, java.lang.Object[] p3" retval="void" is_dynamically_registered="True" super_call="p0, p1, p2, p3" activate_call="p0, p1, p2, p3" />
+        <constructor name="ActionSheetListAdapter" method="n_.ctor:(Landroid/content/Context;ILjava/util/List;)V:" jni_signature="(Landroid/content/Context;ILjava/util/List;)V" managed_parameters="Android.Content.Context, Mono.Android:System.Int32, System.Private.CoreLib:System.Collections.Generic.IList`1&lt;T&gt;, System.Private.CoreLib" params="android.content.Context p0, int p1, java.util.List p2" retval="void" is_dynamically_registered="True" super_call="p0, p1, p2" activate_call="p0, p1, p2" />
+        <constructor name="ActionSheetListAdapter" method="n_.ctor:(Landroid/content/Context;IILjava/util/List;)V:" jni_signature="(Landroid/content/Context;IILjava/util/List;)V" managed_parameters="Android.Content.Context, Mono.Android:System.Int32, System.Private.CoreLib:System.Int32, System.Private.CoreLib:System.Collections.Generic.IList`1&lt;T&gt;, System.Private.CoreLib" params="android.content.Context p0, int p1, int p2, java.util.List p3" retval="void" is_dynamically_registered="True" super_call="p0, p1, p2, p3" activate_call="p0, p1, p2, p3" />
+      </constructors>
+      <methods>
+        <method name="getView" method="n_getView:(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;:GetGetView_ILandroid_view_View_Landroid_view_ViewGroup_Handler" jni_signature="(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;" params="int p0, android.view.View p1, android.view.ViewGroup p2" retval="android.view.View" is_dynamically_registered="True" super_call="p0, p1, p2" activate_call="p0, p1, p2" />
+      </methods>
+    </type>
+    <type name="SnackbarBuilder" package="crc641a3c7a9fa982c507" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="com.google.android.material.snackbar.Snackbar.Callback" partial_assembly_qualified_name="Controls.UserDialogs.Maui.SnackbarBuilder, Controls.UserDialogs.Maui">
+      <constructors>
+        <constructor name="SnackbarBuilder" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+      </constructors>
+      <methods>
+        <method name="onShown" method="n_onShown:(Lcom/google/android/material/snackbar/Snackbar;)V:GetOnShown_Lcom_google_android_material_snackbar_Snackbar_Handler" jni_signature="(Lcom/google/android/material/snackbar/Snackbar;)V" params="com.google.android.material.snackbar.Snackbar p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+        <method name="onDismissed" method="n_onDismissed:(Lcom/google/android/material/snackbar/Snackbar;I)V:GetOnDismissed_Lcom_google_android_material_snackbar_Snackbar_IHandler" jni_signature="(Lcom/google/android/material/snackbar/Snackbar;I)V" params="com.google.android.material.snackbar.Snackbar p0, int p1" retval="void" is_dynamically_registered="True" super_call="p0, p1" activate_call="p0, p1" />
+      </methods>
+    </type>
+    <type name="SnackbarBuilder_CountDown" package="crc641a3c7a9fa982c507" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="android.os.CountDownTimer" partial_assembly_qualified_name="Controls.UserDialogs.Maui.SnackbarBuilder+CountDown, Controls.UserDialogs.Maui">
+      <constructors>
+        <constructor name="SnackbarBuilder_CountDown" method="n_.ctor:(JJ)V:" jni_signature="(JJ)V" managed_parameters="System.Int64, System.Private.CoreLib:System.Int64, System.Private.CoreLib" params="long p0, long p1" retval="void" is_dynamically_registered="True" super_call="p0, p1" activate_call="p0, p1" />
+      </constructors>
+      <methods>
+        <method name="onFinish" method="n_onFinish:()V:GetOnFinishHandler" jni_signature="()V" retval="void" is_dynamically_registered="True" />
+        <method name="onTick" method="n_onTick:(J)V:GetOnTick_JHandler" jni_signature="(J)V" params="long p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+      </methods>
+    </type>
+    <type name="ToastBuilder" package="crc641a3c7a9fa982c507" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="com.google.android.material.snackbar.Snackbar.Callback" partial_assembly_qualified_name="Controls.UserDialogs.Maui.ToastBuilder, Controls.UserDialogs.Maui">
+      <constructors>
+        <constructor name="ToastBuilder" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+      </constructors>
+      <methods>
+        <method name="onShown" method="n_onShown:(Lcom/google/android/material/snackbar/Snackbar;)V:GetOnShown_Lcom_google_android_material_snackbar_Snackbar_Handler" jni_signature="(Lcom/google/android/material/snackbar/Snackbar;)V" params="com.google.android.material.snackbar.Snackbar p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+        <method name="onDismissed" method="n_onDismissed:(Lcom/google/android/material/snackbar/Snackbar;I)V:GetOnDismissed_Lcom_google_android_material_snackbar_Snackbar_IHandler" jni_signature="(Lcom/google/android/material/snackbar/Snackbar;I)V" params="com.google.android.material.snackbar.Snackbar p0, int p1" retval="void" is_dynamically_registered="True" super_call="p0, p1" activate_call="p0, p1" />
+      </methods>
+    </type>
+    <type name="AbstractAppCompatDialogFragment_1" package="crc641a3c7a9fa982c507" is_abstract="True" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="androidx.appcompat.app.AppCompatDialogFragment" partial_assembly_qualified_name="Controls.UserDialogs.Maui.AbstractAppCompatDialogFragment`1, Controls.UserDialogs.Maui">
+      <constructors>
+        <constructor name="AbstractAppCompatDialogFragment_1" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+        <constructor name="AbstractAppCompatDialogFragment_1" method="n_.ctor:(I)V:" jni_signature="(I)V" managed_parameters="System.Int32, System.Private.CoreLib" params="int p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+      </constructors>
+      <methods>
+        <method name="onSaveInstanceState" method="n_onSaveInstanceState:(Landroid/os/Bundle;)V:GetOnSaveInstanceState_Landroid_os_Bundle_Handler" jni_signature="(Landroid/os/Bundle;)V" params="android.os.Bundle p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+        <method name="onCreateDialog" method="n_onCreateDialog:(Landroid/os/Bundle;)Landroid/app/Dialog;:GetOnCreateDialog_Landroid_os_Bundle_Handler" jni_signature="(Landroid/os/Bundle;)Landroid/app/Dialog;" params="android.os.Bundle p0" retval="android.app.Dialog" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+        <method name="onDetach" method="n_onDetach:()V:GetOnDetachHandler" jni_signature="()V" retval="void" is_dynamically_registered="True" />
+      </methods>
+    </type>
+    <type name="ActionSheetAppCompatDialogFragment" package="crc641a3c7a9fa982c507" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="crc641a3c7a9fa982c507.AbstractAppCompatDialogFragment_1" partial_assembly_qualified_name="Controls.UserDialogs.Maui.ActionSheetAppCompatDialogFragment, Controls.UserDialogs.Maui">
+      <constructors>
+        <constructor name="ActionSheetAppCompatDialogFragment" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+        <constructor name="ActionSheetAppCompatDialogFragment" method="n_.ctor:(I)V:" jni_signature="(I)V" managed_parameters="System.Int32, System.Private.CoreLib" params="int p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+      </constructors>
+      <methods>
+        <method name="onCancel" method="n_onCancel:(Landroid/content/DialogInterface;)V:GetOnCancel_Landroid_content_DialogInterface_Handler" jni_signature="(Landroid/content/DialogInterface;)V" params="android.content.DialogInterface p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+        <method name="dismiss" method="n_dismiss:()V:GetDismissHandler" jni_signature="()V" retval="void" is_dynamically_registered="True" />
+      </methods>
+    </type>
+    <type name="AlertAppCompatDialogFragment" package="crc641a3c7a9fa982c507" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="crc641a3c7a9fa982c507.AbstractAppCompatDialogFragment_1" partial_assembly_qualified_name="Controls.UserDialogs.Maui.AlertAppCompatDialogFragment, Controls.UserDialogs.Maui">
+      <constructors>
+        <constructor name="AlertAppCompatDialogFragment" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+        <constructor name="AlertAppCompatDialogFragment" method="n_.ctor:(I)V:" jni_signature="(I)V" managed_parameters="System.Int32, System.Private.CoreLib" params="int p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+      </constructors>
+    </type>
+    <type name="BottomSheetDialogFragment" package="crc641a3c7a9fa982c507" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="crc641a3c7a9fa982c507.AbstractAppCompatDialogFragment_1" partial_assembly_qualified_name="Controls.UserDialogs.Maui.BottomSheetDialogFragment, Controls.UserDialogs.Maui">
+      <constructors>
+        <constructor name="BottomSheetDialogFragment" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+        <constructor name="BottomSheetDialogFragment" method="n_.ctor:(I)V:" jni_signature="(I)V" managed_parameters="System.Int32, System.Private.CoreLib" params="int p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+      </constructors>
+      <methods>
+        <method name="onCancel" method="n_onCancel:(Landroid/content/DialogInterface;)V:GetOnCancel_Landroid_content_DialogInterface_Handler" jni_signature="(Landroid/content/DialogInterface;)V" params="android.content.DialogInterface p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+      </methods>
+    </type>
+    <type name="ConfirmAppCompatDialogFragment" package="crc641a3c7a9fa982c507" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="crc641a3c7a9fa982c507.AbstractAppCompatDialogFragment_1" partial_assembly_qualified_name="Controls.UserDialogs.Maui.ConfirmAppCompatDialogFragment, Controls.UserDialogs.Maui">
+      <constructors>
+        <constructor name="ConfirmAppCompatDialogFragment" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+        <constructor name="ConfirmAppCompatDialogFragment" method="n_.ctor:(I)V:" jni_signature="(I)V" managed_parameters="System.Int32, System.Private.CoreLib" params="int p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+      </constructors>
+    </type>
+    <type name="CustomTypeFaceSpan" package="crc641a3c7a9fa982c507" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="android.text.style.MetricAffectingSpan" partial_assembly_qualified_name="Controls.UserDialogs.Maui.CustomTypeFaceSpan, Controls.UserDialogs.Maui">
+      <constructors>
+        <constructor name="CustomTypeFaceSpan" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+        <constructor name="CustomTypeFaceSpan" method="n_.ctor:(Landroid/graphics/Typeface;)V:" jni_signature="(Landroid/graphics/Typeface;)V" managed_parameters="Android.Graphics.Typeface, Mono.Android" params="android.graphics.Typeface p0" retval="void" is_dynamically_registered="True" super_call="" activate_call="p0" />
+      </constructors>
+      <methods>
+        <method name="updateMeasureState" method="n_updateMeasureState:(Landroid/text/TextPaint;)V:GetUpdateMeasureState_Landroid_text_TextPaint_Handler" jni_signature="(Landroid/text/TextPaint;)V" params="android.text.TextPaint p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+        <method name="updateDrawState" method="n_updateDrawState:(Landroid/text/TextPaint;)V:GetUpdateDrawState_Landroid_text_TextPaint_Handler" jni_signature="(Landroid/text/TextPaint;)V" params="android.text.TextPaint p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+      </methods>
+    </type>
+    <type name="LetterSpacingSpan" package="crc641a3c7a9fa982c507" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="android.text.style.MetricAffectingSpan" partial_assembly_qualified_name="Controls.UserDialogs.Maui.LetterSpacingSpan, Controls.UserDialogs.Maui">
+      <constructors>
+        <constructor name="LetterSpacingSpan" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+        <constructor name="LetterSpacingSpan" method="n_.ctor:(F)V:" jni_signature="(F)V" managed_parameters="System.Single, System.Private.CoreLib" params="float p0" retval="void" is_dynamically_registered="True" super_call="" activate_call="p0" />
+      </constructors>
+      <methods>
+        <method name="updateDrawState" method="n_updateDrawState:(Landroid/text/TextPaint;)V:GetUpdateDrawState_Landroid_text_TextPaint_Handler" jni_signature="(Landroid/text/TextPaint;)V" params="android.text.TextPaint p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+        <method name="updateMeasureState" method="n_updateMeasureState:(Landroid/text/TextPaint;)V:GetUpdateMeasureState_Landroid_text_TextPaint_Handler" jni_signature="(Landroid/text/TextPaint;)V" params="android.text.TextPaint p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+      </methods>
+    </type>
+  </jcw-types>
+  <acw-types partial-assembly-name="Controls.UserDialogs.Maui" module-name="Controls.UserDialogs.Maui.dll">
+    <type assembly-qualified-name="Controls.UserDialogs.Maui.ActionSheetListAdapter, Controls.UserDialogs.Maui, Version=1.12.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="controls.userdialogs.maui.ActionSheetListAdapter" java-key="crc641a3c7a9fa982c507.ActionSheetListAdapter" managed-key="Controls.UserDialogs.Maui.ActionSheetListAdapter" partial-assembly-qualified-name="Controls.UserDialogs.Maui.ActionSheetListAdapter, Controls.UserDialogs.Maui" />
+    <type assembly-qualified-name="Controls.UserDialogs.Maui.SnackbarBuilder, Controls.UserDialogs.Maui, Version=1.12.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="controls.userdialogs.maui.SnackbarBuilder" java-key="crc641a3c7a9fa982c507.SnackbarBuilder" managed-key="Controls.UserDialogs.Maui.SnackbarBuilder" partial-assembly-qualified-name="Controls.UserDialogs.Maui.SnackbarBuilder, Controls.UserDialogs.Maui" />
+    <type assembly-qualified-name="Controls.UserDialogs.Maui.SnackbarBuilder+CountDown, Controls.UserDialogs.Maui, Version=1.12.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="controls.userdialogs.maui.SnackbarBuilder_CountDown" java-key="crc641a3c7a9fa982c507.SnackbarBuilder_CountDown" managed-key="Controls.UserDialogs.Maui.SnackbarBuilder.CountDown" partial-assembly-qualified-name="Controls.UserDialogs.Maui.SnackbarBuilder+CountDown, Controls.UserDialogs.Maui" />
+    <type assembly-qualified-name="Controls.UserDialogs.Maui.ToastBuilder, Controls.UserDialogs.Maui, Version=1.12.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="controls.userdialogs.maui.ToastBuilder" java-key="crc641a3c7a9fa982c507.ToastBuilder" managed-key="Controls.UserDialogs.Maui.ToastBuilder" partial-assembly-qualified-name="Controls.UserDialogs.Maui.ToastBuilder, Controls.UserDialogs.Maui" />
+    <type assembly-qualified-name="Controls.UserDialogs.Maui.AbstractAppCompatDialogFragment`1, Controls.UserDialogs.Maui, Version=1.12.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="controls.userdialogs.maui.AbstractAppCompatDialogFragment_1" java-key="crc641a3c7a9fa982c507.AbstractAppCompatDialogFragment_1" managed-key="Controls.UserDialogs.Maui.AbstractAppCompatDialogFragment`1" partial-assembly-qualified-name="Controls.UserDialogs.Maui.AbstractAppCompatDialogFragment`1, Controls.UserDialogs.Maui" />
+    <type assembly-qualified-name="Controls.UserDialogs.Maui.ActionSheetAppCompatDialogFragment, Controls.UserDialogs.Maui, Version=1.12.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="controls.userdialogs.maui.ActionSheetAppCompatDialogFragment" java-key="crc641a3c7a9fa982c507.ActionSheetAppCompatDialogFragment" managed-key="Controls.UserDialogs.Maui.ActionSheetAppCompatDialogFragment" partial-assembly-qualified-name="Controls.UserDialogs.Maui.ActionSheetAppCompatDialogFragment, Controls.UserDialogs.Maui" />
+    <type assembly-qualified-name="Controls.UserDialogs.Maui.AlertAppCompatDialogFragment, Controls.UserDialogs.Maui, Version=1.12.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="controls.userdialogs.maui.AlertAppCompatDialogFragment" java-key="crc641a3c7a9fa982c507.AlertAppCompatDialogFragment" managed-key="Controls.UserDialogs.Maui.AlertAppCompatDialogFragment" partial-assembly-qualified-name="Controls.UserDialogs.Maui.AlertAppCompatDialogFragment, Controls.UserDialogs.Maui" />
+    <type assembly-qualified-name="Controls.UserDialogs.Maui.BottomSheetDialogFragment, Controls.UserDialogs.Maui, Version=1.12.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="controls.userdialogs.maui.BottomSheetDialogFragment" java-key="crc641a3c7a9fa982c507.BottomSheetDialogFragment" managed-key="Controls.UserDialogs.Maui.BottomSheetDialogFragment" partial-assembly-qualified-name="Controls.UserDialogs.Maui.BottomSheetDialogFragment, Controls.UserDialogs.Maui" />
+    <type assembly-qualified-name="Controls.UserDialogs.Maui.ConfirmAppCompatDialogFragment, Controls.UserDialogs.Maui, Version=1.12.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="controls.userdialogs.maui.ConfirmAppCompatDialogFragment" java-key="crc641a3c7a9fa982c507.ConfirmAppCompatDialogFragment" managed-key="Controls.UserDialogs.Maui.ConfirmAppCompatDialogFragment" partial-assembly-qualified-name="Controls.UserDialogs.Maui.ConfirmAppCompatDialogFragment, Controls.UserDialogs.Maui" />
+    <type assembly-qualified-name="Controls.UserDialogs.Maui.CustomTypeFaceSpan, Controls.UserDialogs.Maui, Version=1.12.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="controls.userdialogs.maui.CustomTypeFaceSpan" java-key="crc641a3c7a9fa982c507.CustomTypeFaceSpan" managed-key="Controls.UserDialogs.Maui.CustomTypeFaceSpan" partial-assembly-qualified-name="Controls.UserDialogs.Maui.CustomTypeFaceSpan, Controls.UserDialogs.Maui" />
+    <type assembly-qualified-name="Controls.UserDialogs.Maui.LetterSpacingSpan, Controls.UserDialogs.Maui, Version=1.12.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="controls.userdialogs.maui.LetterSpacingSpan" java-key="crc641a3c7a9fa982c507.LetterSpacingSpan" managed-key="Controls.UserDialogs.Maui.LetterSpacingSpan" partial-assembly-qualified-name="Controls.UserDialogs.Maui.LetterSpacingSpan, Controls.UserDialogs.Maui" />
+  </acw-types>
+</api>

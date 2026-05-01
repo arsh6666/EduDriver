@@ -1,0 +1,45 @@
+@page "/chat/{UserId:guid}"
+@inherits RootflyComponentBase<ConversationViewModel>
+
+<PageTitle>Conversation</PageTitle>
+
+<MudPaper Class="d-flex flex-column" Style="height: calc(100vh - 120px);" Elevation="2">
+    <MudToolBar Dense="true">
+        <MudIconButton Icon="@Icons.Material.Filled.ArrowBack" OnClick="() => Navigation.GoBackAsync()" />
+        <MudText Typo="Typo.h6" Class="ml-2">@ViewModel.TargetUserName</MudText>
+    </MudToolBar>
+
+    <div style="flex: 1; overflow-y: auto; padding: 16px;">
+        @foreach (var msg in ViewModel.Messages)
+        {
+            <div class="d-flex @(msg.IsOwnMessage ? "justify-end" : "justify-start") mb-2">
+                <MudPaper Class="pa-3" Style="@($"max-width:70%; border-radius:12px; background:{(msg.IsOwnMessage ? "#1A73E8" : "#E0E0E0")}; color:{(msg.IsOwnMessage ? "white" : "black")}")">
+                    <MudText Typo="Typo.body2">@msg.Text</MudText>
+                    <MudText Typo="Typo.caption" Style="@($"color:{(msg.IsOwnMessage ? "rgba(255,255,255,0.7)" : "#9E9E9E")}")">@msg.CreationTime.ToString("hh:mm tt")</MudText>
+                </MudPaper>
+            </div>
+        }
+    </div>
+
+    <MudToolBar Dense="true" Class="pa-2">
+        <MudTextField @bind-Value="ViewModel.MessageText" Placeholder="Type a message..." Variant="Variant.Outlined"
+                      Margin="Margin.Dense" Class="flex-grow-1" OnKeyDown="OnKeyDown" />
+        <MudIconButton Icon="@Icons.Material.Filled.Send" Color="Color.Primary"
+                       OnClick="() => ViewModel.SendMessageCommand.Execute(null)" />
+    </MudToolBar>
+</MudPaper>
+
+@code {
+    [Parameter] public Guid UserId { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await ViewModel.InitializeAsync(UserId, string.Empty);
+        await base.OnInitializedAsync();
+    }
+
+    private async Task OnKeyDown(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter") await ViewModel.SendMessageCommand.ExecuteAsync(null);
+    }
+}

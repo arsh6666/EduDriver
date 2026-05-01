@@ -1,4 +1,5 @@
 using EduDriver.Shared.Chat.Dtos;
+using Rootfly.Mobile.Core.Common.DTOs;
 using EduDriver.Shared.Education.Dtos;
 using Rootfly.Mobile.Core.Common.Results;
 using Rootfly.Mobile.Core.Networking.REST;

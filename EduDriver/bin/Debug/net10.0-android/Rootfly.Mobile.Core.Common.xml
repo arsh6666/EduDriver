@@ -29,6 +29,18 @@
             Gets the list of supported culture codes from the client config.
             </summary>
         </member>
+        <member name="T:Rootfly.Mobile.Core.Common.DTOs.AbpPagedRequestDto">
+            <summary>
+            Standard ABP paged request DTO using SkipCount/MaxResultCount convention.
+            Use this for all paginated API requests to ABP backends.
+            </summary>
+        </member>
+        <member name="T:Rootfly.Mobile.Core.Common.DTOs.AbpPagedResultDto`1">
+            <summary>
+            Standard ABP paged result DTO matching the backend's <c>PagedResultDto&lt;T&gt;</c>.
+            Use this for all paginated API responses from ABP backends.
+            </summary>
+        </member>
         <member name="T:Rootfly.Mobile.Core.Common.ViewModels.BaseListViewModel`1">
             <inheritdoc/>
             <inheritdoc/>

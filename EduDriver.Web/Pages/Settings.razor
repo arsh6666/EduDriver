@@ -1,0 +1,20 @@
+@page "/settings"
+@inherits RootflyComponentBase<PlaceholderViewModel>
+
+<PageTitle>Settings</PageTitle>
+<MudText Typo="Typo.h4" Class="mb-4">Settings</MudText>
+
+@if (ViewModel.IsBusy)
+{{
+    <MudProgressLinear Color="Color.Primary" Indeterminate="true" />
+}}
+else
+{{
+    @if (!string.IsNullOrEmpty(ViewModel.ErrorMessage))
+    {{
+        <MudAlert Severity="Severity.Error" Class="mb-4">@ViewModel.ErrorMessage</MudAlert>
+    }}
+    <MudPaper Elevation="2" Class="pa-4">
+        <MudText Typo="Typo.body1" Color="Color.Secondary">No data available.</MudText>
+    </MudPaper>
+}}

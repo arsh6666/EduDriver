@@ -1,0 +1,50 @@
+## .NET / MAUI / Blazor gitignore
+
+# Build outputs
+bin/
+obj/
+out/
+
+# Visual Studio
+.vs/
+*.user
+*.rsuser
+*.suo
+*.userprefs
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+*.DotSettings.user
+
+# Log files
+*.log
+[Ll]ogs/
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+!**/[Pp]ackages/repositories.config
+.nuget/
+
+# Node / npm (Blazor WASM tooling)
+node_modules/
+npm-debug.log*
+
+# MAUI / Android / iOS
+**/platforms/android/.gradle/
+**/platforms/android/local.properties
+google-services.json
+GoogleService-Info.plist
+
+# Secrets
+*.env
+appsettings.*.json
+!appsettings.json
+secrets.json
+
+# OS
+.DS_Store
+Thumbs.db

@@ -2,10 +2,11 @@ using System.Net.Http.Json;
 using System.Text.Json;
 using Rootfly.Mobile.Core.Common.Results;
 using Rootfly.Mobile.Core.Networking.REST;
+using Volo.Abp.DependencyInjection;
 
 namespace EduDriver.Web.Services;
 
-public class BlazorApiClient : IApiClient
+public class BlazorApiClient : IApiClient, ISingletonDependency
 {
     private readonly HttpClient _http;
     private readonly JsonSerializerOptions _jsonOptions = new()

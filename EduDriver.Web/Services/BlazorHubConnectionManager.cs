@@ -1,9 +1,10 @@
 using Rootfly.Mobile.Core.Networking.SignalR;
+using Volo.Abp.DependencyInjection;
 
 namespace EduDriver.Web.Services;
 
 #pragma warning disable CS0067
-public class BlazorHubConnectionManager : IHubConnectionManager
+public class BlazorHubConnectionManager : IHubConnectionManager, ISingletonDependency
 {
     public bool IsConnected => false;
     public event Action<Exception?>? ConnectionClosed;

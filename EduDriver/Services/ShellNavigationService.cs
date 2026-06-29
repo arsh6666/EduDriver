@@ -16,4 +16,7 @@ public class ShellNavigationService : INavigationService, ISingletonDependency
 
     public Task NavigateToRootAsync()
         => Shell.Current.GoToAsync("//Login");
+
+    public Task OpenUriAsync(Uri uri)
+        => Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
 }

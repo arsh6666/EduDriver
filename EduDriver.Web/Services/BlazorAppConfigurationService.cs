@@ -1,9 +1,11 @@
 using Rootfly.Mobile.Core.Networking.REST.ApplicationConfiguration;
 using Rootfly.Mobile.Core.Networking.REST.ApplicationConfiguration.Dtos;
+using Volo.Abp.DependencyInjection;
 
 namespace EduDriver.Web.Services;
 
-public class BlazorAppConfigurationService : IAbpApplicationConfigurationService
+[ExposeServices(typeof(IAbpApplicationConfigurationService))]
+public class BlazorAppConfigurationService : IAbpApplicationConfigurationService, ISingletonDependency
 {
     private AbpApplicationConfigurationDto _config = new();
     public bool IsLoaded { get; private set; }

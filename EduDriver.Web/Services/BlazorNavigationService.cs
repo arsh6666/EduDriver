@@ -23,4 +23,10 @@ public class BlazorNavigationService : INavigationService
 
     public Task GoBackAsync() { _nav.NavigateTo("javascript:history.back()"); return Task.CompletedTask; }
     public Task NavigateToRootAsync() { _nav.NavigateTo("/"); return Task.CompletedTask; }
+
+    public Task OpenUriAsync(Uri uri)
+    {
+        _nav.NavigateTo(uri.ToString(), forceLoad: true);
+        return Task.CompletedTask;
+    }
 }
